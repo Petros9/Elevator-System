@@ -41,6 +41,9 @@ public class ElevatorDistributor {
             if(elevator.isFreeOfTasks()){
                 transportingElevator = elevator;
                 break;
+            } else if(elevator.getDestination() == passengerCurrentFloor){
+                transportingElevator = elevator;
+                break;
             } else {
                 int elevatorDistance = calculateDistance(passengerDestination, passengerCurrentFloor,elevator.getDestination(), elevator.getCurrentFloor());
                 if(distance > elevatorDistance){
