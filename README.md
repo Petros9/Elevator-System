@@ -10,3 +10,14 @@ Część składa się z pojedyńczej klasy `Floor`. Na samym początku działani
 Założyłem, że na każdym piętrze znajduje się jeden osobny panel podpięty do sieci lokalnej, na którym każdy może podać piętro, na które chce się udać. System zarządzający windami wyznacza określoną windę, po czym użytkownik jest informowany, że np. `na piętro nr 5 zawiezie go winda nr 8`.
 
 Wątek o nazwie `sendRequest` ma za zadanie w nieskończonej pętli pobierać przywołania wind. Wątek o nazwie `getResponse` ma za zadanie informować użytkownika do jakiej ma się udać.
+
+
+### Zarządzanie windami
+
+Część składa się z poszczególnych klas:
+
+- Elevator Panel (pełni funkcję serwera TCP),
+- FloorHandelrThread (wątek służący do porozumiewania się z poszczególnymi piętrami),
+- ElevatorDistrubutor (klasa służąca do przydzielania windom zadań oraz wybierania numery windy dla użytkowanika),
+- Elevator (klasa reprezentująca windę).
+
