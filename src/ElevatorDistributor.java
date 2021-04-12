@@ -26,9 +26,9 @@ public class ElevatorDistributor {
         this.elevators = generateElevators(elevatorsQuantity);
     }
 
-    private int calculateDistance(int passengerDestination, int passengerCurrentFloor, int elevatorDestination, int elevatorCurrentFloor){
-        int currentElevatorMovingVector = Math.abs(elevatorDestination - elevatorCurrentFloor);
-        int elevatorMovingToPassengerVector = Math.abs(elevatorDestination - passengerCurrentFloor);
+    private int calculateDistance(int passengerDestination, int passengerCurrentFloor, int elevatorLastDestination, int elevatorWholeDistance){
+        int currentElevatorMovingVector = Math.abs(elevatorLastDestination - elevatorWholeDistance);
+        int elevatorMovingToPassengerVector = Math.abs(elevatorLastDestination - passengerCurrentFloor);
         int passengerMovingVector = Math.abs(passengerDestination - passengerCurrentFloor);
         return currentElevatorMovingVector + elevatorMovingToPassengerVector + passengerMovingVector;
     }
@@ -45,7 +45,7 @@ public class ElevatorDistributor {
                 transportingElevator = elevator;
                 break;
             } else {
-                int elevatorDistance = calculateDistance(passengerDestination, passengerCurrentFloor,elevator.getDestination(), elevator.getCurrentFloor());
+                int elevatorDistance = calculateDistance(passengerDestination, passengerCurrentFloor,elevator.getLastDestination(), elevator.getWholeDistance());
                 if(distance > elevatorDistance){
                     distance = elevatorDistance;
                     transportingElevator = elevator;

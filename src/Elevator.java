@@ -29,7 +29,26 @@ public class Elevator extends Thread{
         }
         return this.destinationsQueue.peek();
     }
-
+    public int getLastDestination(){
+        if(destinationsQueue.isEmpty()){
+            return currentFloor;
+        }
+        return new LinkedList<>(destinationsQueue).getLast();
+    }
+    public int getWholeDistance(){
+        if(destinationsQueue.isEmpty()){
+            return 0;
+        }
+        if(destinationsQueue.size() == 1){
+            return destinationsQueue.peek();
+        }
+        LinkedList<Integer> elevatorDistances = new LinkedList<>(destinationsQueue);
+        int wholeDistance = 0;
+        for(int i = 0; i < elevatorDistances.size(); i++){
+            wholeDistance += Math.abs(elevatorDistances.get(i + 1) - elevatorDistances.get(i));
+        }
+        return wholeDistance;
+    }
     public int getNumber() {
         return number;
     }
