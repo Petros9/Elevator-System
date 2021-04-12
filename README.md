@@ -25,10 +25,10 @@ Część składa się z poszczególnych klas:
 - ElevatorDistrubutor (klasa służąca do przydzielania windom zadań oraz wybierania numery windy dla użytkowanika),
 - Elevator (klasa reprezentująca windę).
 
-* *ElevatorPanel* 
+***ElevatorPanel*** 
 
-* *FloorHandlerThread* 
+***FloorHandlerThread***
 
-* *ElevatorDistributor* 
+***ElevatorDistributor***
 
-* *Elevator* 
+***Elevator***
