@@ -9,10 +9,10 @@ Część składa się z pojedyńczej klasy `Floor`. Na samym początku działani
 
 Założyłem, że na każdym piętrze znajduje się jeden osobny panel podpięty do sieci lokalnej, na którym każdy może podać docelowe piętro. System zarządzający windami wyznacza określoną windę, po czym użytkownik dostaje przykładową informajcę `na piętro nr 5 zawiezie Ciebie winda nr 8`.
 
-* **Wątek:** `sendRequest`
+* **Wątek:** `sendRequest`->
 Wątek ma za zadanie w nieskończonej pętli pobierać przywołania wind. 
 
-* **Wątek:** `getResponse`
+* **Wątek:** `getResponse` ->
 Wątek ma za zadanie informować użytkownika do jakiej ma się udać.
 
 
@@ -20,8 +20,15 @@ Wątek ma za zadanie informować użytkownika do jakiej ma się udać.
 
 Część składa się z poszczególnych klas:
 
-- Elevator Panel (pełni funkcję serwera TCP),
-- FloorHandelrThread (wątek służący do porozumiewania się z poszczególnymi piętrami),
+- ElevatorPanel (pełni funkcję serwera TCP),
+- FloorHandlerThread (wątek służący do porozumiewania się z poszczególnymi piętrami),
 - ElevatorDistrubutor (klasa służąca do przydzielania windom zadań oraz wybierania numery windy dla użytkowanika),
 - Elevator (klasa reprezentująca windę).
 
+* *ElevatorPanel* 
+
+* *FloorHandlerThread* 
+
+* *ElevatorDistributor* 
+
+* *Elevator* 
