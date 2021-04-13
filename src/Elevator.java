@@ -44,9 +44,10 @@ public class Elevator extends Thread{
         }
         LinkedList<Integer> elevatorDistances = new LinkedList<>(destinationsQueue);
         int wholeDistance = 0;
-        for(int i = 0; i < elevatorDistances.size(); i++){
+        for(int i = 0; i < elevatorDistances.size() - 1; i++){
             wholeDistance += Math.abs(elevatorDistances.get(i + 1) - elevatorDistances.get(i));
         }
+        wholeDistance = wholeDistance + Math.abs(getDestination() - getCurrentFloor());
         return wholeDistance;
     }
     public int getNumber() {
