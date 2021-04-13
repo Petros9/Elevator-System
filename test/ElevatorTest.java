@@ -18,7 +18,26 @@ public class ElevatorTest {
         // then
         Assert.assertEquals(33, elevator.getWholeDistance());
     }
+    @Test
+    public void getWholeDistanceFromElevatorWithNoTasks(){
+        // given
+        Elevator elevator = new Elevator(1, 1);
 
+        // when
+
+        // then
+        Assert.assertEquals(0, elevator.getWholeDistance());
+    }
+    @Test
+    public void getWholeDistanceFromElevatorWithOneTask(){
+        // given
+        Elevator elevator = new Elevator(1, 1);
+
+        // when
+        elevator.setDestination(13);
+        // then
+        Assert.assertEquals(12, elevator.getWholeDistance());
+    }
     @Test
     public void getLastDestination(){
         //given

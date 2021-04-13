@@ -40,7 +40,7 @@ public class Elevator extends Thread{
             return 0;
         }
         if(destinationsQueue.size() == 1){
-            return destinationsQueue.peek();
+            return Math.abs(destinationsQueue.peek() - currentFloor);
         }
         LinkedList<Integer> elevatorDistances = new LinkedList<>(destinationsQueue);
         int wholeDistance = 0;

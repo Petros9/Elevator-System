@@ -33,14 +33,13 @@ public class ElevatorDistributor {
         return currentElevatorMovingVector + elevatorMovingToPassengerVector + passengerMovingVector;
     }
 
-    private Elevator chooseTransportingElevatorNumber(int passengerDestination, int passengerCurrentFloor){
+    private Elevator chooseTransportingElevator(int passengerDestination, int passengerCurrentFloor){
         Elevator transportingElevator = null;
         int distance = INFINITY;
 
         for(Elevator elevator : elevators){
             if(elevator.isFreeOfTasks()){
                 transportingElevator = elevator;
-                break;
             } else if(elevator.getDestination() == passengerCurrentFloor){
                 transportingElevator = elevator;
                 break;
@@ -76,7 +75,7 @@ public class ElevatorDistributor {
         lock.lock();
         Elevator resultElevator;
         try{
-            resultElevator = chooseTransportingElevatorNumber(destination, floorNumber);
+            resultElevator = chooseTransportingElevator(destination, floorNumber);
             resultElevator.setDestination(floorNumber);
             resultElevator.setDestination(destination);
         } finally {
